@@ -49,6 +49,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "database_consistency", require: false
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
