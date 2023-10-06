@@ -1,0 +1,5 @@
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+Layout/InitialIndentation:
+  Enabled: false
