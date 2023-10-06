@@ -253,10 +253,6 @@ GEM
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.20.2)
-      activesupport (>= 4.2.0)
-      rack (>= 1.1)
-      rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     smart_properties (1.17.0)
@@ -279,9 +275,6 @@ GEM
     standard-performance (1.2.0)
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.19.0)
-    standard-rails (0.2.0)
-      lint_roller (~> 1.0)
-      rubocop-rails (~> 2.20.2)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
@@ -326,7 +319,6 @@ DEPENDENCIES
   rspec-rails
   sprockets-rails
   standard
-  standard-rails
   stimulus-rails
   turbo-rails
   web-console
