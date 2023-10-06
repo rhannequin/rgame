@@ -17,7 +17,7 @@ bin/setup
 ## Run
 
 ```
-bundle e rails s
+bin/dev
 ```
 
 ## Test

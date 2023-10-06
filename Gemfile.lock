@@ -176,6 +176,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-aarch64-linux)
       racc (~> 1.4)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
@@ -298,6 +300,14 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    tailwindcss-rails (2.0.30)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-aarch64-linux)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
     turbo-rails (1.4.0)
@@ -320,6 +330,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  arm64-darwin
   ruby
   x86_64-linux
 
@@ -342,6 +353,7 @@ DEPENDENCIES
   sprockets-rails
   standard
   stimulus-rails
+  tailwindcss-rails
   turbo-rails
   web-console
 

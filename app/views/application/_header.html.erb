@@ -1,0 +1,8 @@
+<header>
+  <% if signed_in? %>
+    Signed in as: <%= current_user.email %>
+    <%= button_to t("application.header.sign_out"), sign_out_path, method: :delete %>
+  <% else %>
+    <%= link_to t("application.header.sign_in"), sign_in_path %>
+  <% end %>
+</header>
