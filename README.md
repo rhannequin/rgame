@@ -1,24 +1,27 @@
-# README
+# Rgame ![tests](https://github.com/rhannequin/rgame/workflows/Tests/badge.svg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rgame is a Ogame clone in Ruby on Rails.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby ~2.3
+- Rails ~7.1
+- PostgreSQL ~14
 
-* System dependencies
+## Set-up
 
-* Configuration
+```
+bin/setup
+```
 
-* Database creation
+## Run
 
-* Database initialization
+```
+bundle e rails s
+```
 
-* How to run the test suite
+## Test
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle exec rspec
+```
