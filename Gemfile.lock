@@ -74,8 +74,12 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    argon2 (2.3.0)
+      ffi (~> 1.15)
+      ffi-compiler (~> 1.0)
     ast (2.4.2)
     base64 (0.1.1)
+    bcrypt (3.1.19)
     better_html (2.0.2)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -89,6 +93,14 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.0.1)
     builder (3.2.4)
+    clearance (2.6.1)
+      actionmailer (>= 5.0)
+      activemodel (>= 5.0)
+      activerecord (>= 5.0)
+      argon2 (~> 2.0, >= 2.0.2)
+      bcrypt (>= 3.1.1)
+      email_validator (~> 2.0)
+      railties (>= 5.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -101,6 +113,8 @@ GEM
     diff-lcs (1.5.0)
     drb (2.1.1)
       ruby2_keywords
+    email_validator (2.2.4)
+      activemodel
     erb_lint (0.5.0)
       activesupport
       better_html (>= 2.0.1)
@@ -115,6 +129,10 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    ffi (1.16.3)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -255,6 +273,8 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -306,6 +326,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  clearance
   database_consistency
   debug
   erb_lint
@@ -317,6 +338,7 @@ DEPENDENCIES
   rails (~> 7.1.0)
   redis (>= 4.0.1)
   rspec-rails
+  shoulda-matchers
   sprockets-rails
   standard
   stimulus-rails
