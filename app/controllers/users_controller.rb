@@ -4,7 +4,11 @@ class UsersController < Clearance::UsersController
   def create
     @user = user_from_params
 
-    if @user.save
+    signed_up = ActiveRecord::Base.transaction do
+      @user.save && @user.planets.create
+    end
+
+    if signed_up
       sign_in @user
       redirect_back_or url_after_create
     else
