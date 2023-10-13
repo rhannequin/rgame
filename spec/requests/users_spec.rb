@@ -16,6 +16,15 @@ describe "POST /users", type: :request do
         expect(User.count).to eq old_user_count + 1
         expect(response).to redirect_to(Clearance.configuration.redirect_url)
       end
+
+      it "creates a planet for the user" do
+        user_attributes = FactoryBot.attributes_for(:user)
+
+        post users_path, params: {user: user_attributes}
+
+        user = User.find_by(email: user_attributes[:email])
+        expect(user.planets.count).to be 1
+      end
     end
 
     context "with invalid attributes" do
