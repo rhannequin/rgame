@@ -7,3 +7,13 @@ ActiveStorage::Blob:
   enabled: false
 ActiveStorage::VariantRecord:
   enabled: false
+
+# Ignore false positive from Clearance
+User:
+  email:
+    ColumnPresenceChecker:
+      enabled: false
+  index_users_on_remember_token:
+    enabled: false
+  remember_token:
+    enabled: false
