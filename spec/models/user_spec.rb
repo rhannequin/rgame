@@ -9,6 +9,10 @@ describe User, type: :model do
     end
   end
 
+  describe "associations" do
+    it { is_expected.to have_many(:planets).dependent(:destroy) }
+  end
+
   describe "validations" do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:encrypted_password) }
