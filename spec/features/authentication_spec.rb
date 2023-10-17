@@ -66,7 +66,7 @@ describe "the authentication process", type: :feature do
       click_button "Sign in"
       click_button "Sign out"
 
-      expect(page).to have_link "Sign in"
+      expect(page).to have_content "Sign in"
     end
   end
 end

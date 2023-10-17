@@ -1,0 +1,15 @@
+<div id="clearance" class="sign-up max-w-screen-sm mx-auto">
+  <h2 class="text-xl pt-2 pb-4"><%= t(".title") %></h2>
+
+  <%= form_for @user do |form| %>
+    <%= render partial: "/users/form", object: form %>
+
+    <div class="submit-field pb-4">
+      <%= form.submit class: "bg-blue-950 py-1 px-2 rounded-md cursor-pointer" %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path, class: "text-blue-800 underline hover:no-underline" %>
+    </div>
+  <% end %>
+</div>
