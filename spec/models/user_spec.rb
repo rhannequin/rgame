@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe User, type: :model do
+describe User do
   describe "factory" do
     it "allows to create a records" do
       expect { create(:user) }.not_to raise_error

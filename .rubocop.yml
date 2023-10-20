@@ -2,9 +2,14 @@
 require:
   - standard
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
 
 inherit_gem:
   standard: config/base.yml

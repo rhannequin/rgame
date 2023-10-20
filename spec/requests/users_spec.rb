@@ -2,11 +2,11 @@
 
 require "rails_helper"
 
-describe "POST /users", type: :request do
+describe "POST /users" do
   context "when user is signed out" do
     context "with valid attributes" do
       it "redirects to the redirect_url" do
-        user_attributes = FactoryBot.attributes_for(:user)
+        user_attributes = attributes_for(:user)
         old_user_count = User.count
 
         post users_path, params: {
@@ -18,7 +18,7 @@ describe "POST /users", type: :request do
       end
 
       it "creates a planet for the user" do
-        user_attributes = FactoryBot.attributes_for(:user)
+        user_attributes = attributes_for(:user)
 
         post users_path, params: {user: user_attributes}
 
@@ -29,7 +29,7 @@ describe "POST /users", type: :request do
 
     context "with invalid attributes" do
       it "renders the page with error" do
-        user_attributes = FactoryBot.attributes_for(:user, email: nil)
+        user_attributes = attributes_for(:user, email: nil)
         old_user_count = User.count
 
         post users_path, params: {

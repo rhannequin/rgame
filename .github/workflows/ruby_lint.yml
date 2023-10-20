@@ -1,5 +1,5 @@
 ---
-name: Lint with StandardRB
+name: Lint with StandardRB and Rubocop extensions
 on: [push]
 
 jobs:
@@ -12,7 +12,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
       - name: StandardRB Linter
         uses: testdouble/standard-ruby-action@0.0.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rubocop Linter
+        run: bundle exec rubocop
