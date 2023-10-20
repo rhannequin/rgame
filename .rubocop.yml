@@ -1,6 +1,10 @@
 ---
 require:
   - standard
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
 
 inherit_gem:
   standard: config/base.yml

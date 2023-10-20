@@ -8,6 +8,11 @@ ActiveStorage::Blob:
 ActiveStorage::VariantRecord:
   enabled: false
 
+Planet:
+  user:
+    ColumnPresenceChecker:
+      enabled: false
+
 # Ignore false positive from Clearance
 User:
   email:
