@@ -1,0 +1,10 @@
+<% if signed_in? %>
+  <div class="mt-10 flex justify-center space-x-6 text-center">
+    <% current_user.planets.each do %>
+      <div class="inline-block">
+        <%= image_tag "pluto.png", class: "inline-block w-40" %>
+        <h3 class="text-2xl"><%= t("planets.homeworld") %></h3>
+      </div>
+    <% end %>
+  </div>
+<% end %>
