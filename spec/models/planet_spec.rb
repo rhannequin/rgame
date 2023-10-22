@@ -12,4 +12,12 @@ describe Planet do
   describe "associations" do
     it { is_expected.to belong_to(:user) }
   end
+
+  describe "#update_resources!" do
+    it "updates metal based on time since last update" do
+      planet = create(:planet, metal: 0, resources_updated_at: 1.hour.ago)
+      planet.update_resources!
+      expect(planet.reload.metal).to eq(3600)
+    end
+  end
 end
