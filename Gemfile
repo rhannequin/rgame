@@ -40,6 +40,7 @@ gem "bootsnap", require: false
 
 gem "clearance"
 gem "sidekiq"
+gem "sidekiq-scheduler"
 gem "tailwindcss-rails"
 
 group :development, :test do

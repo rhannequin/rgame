@@ -1,0 +1,3 @@
+update_all_planets_resources_job:
+  every: 1 minute
+  class: "UpdateAllPlanetsResourcesJob"
