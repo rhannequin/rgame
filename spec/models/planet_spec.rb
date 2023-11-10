@@ -22,9 +22,15 @@ describe Planet do
 
   describe "#update_resources!" do
     it "updates metal based on time since last update" do
-      planet = create(:planet, metal: 0, resources_updated_at: 1.hour.ago)
+      planet = create(
+        :planet,
+        metal: 0,
+        metal_basic_income: 10,
+        metal_mine_level: 2,
+        resources_updated_at: 1.hour.ago
+      )
       planet.update_resources!
-      expect(planet.reload.metal).to eq(3600)
+      expect(planet.reload.metal).to eq(72000)
     end
   end
 end

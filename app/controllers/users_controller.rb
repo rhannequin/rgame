@@ -5,7 +5,7 @@ class UsersController < Clearance::UsersController
     @user = user_from_params
 
     signed_up = ActiveRecord::Base.transaction do
-      @user.save && @user.planets.create
+      @user.save && FirstPlanet.new(@user).save
     end
 
     if signed_up

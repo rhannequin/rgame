@@ -11,6 +11,8 @@ describe "the home page" do
           :planet,
           user: user,
           metal: 0,
+          metal_basic_income: 10,
+          metal_mine_level: 2,
           resources_updated_at: Time.current
         )
 
@@ -20,7 +22,7 @@ describe "the home page" do
       travel_to Time.zone.local(2023, 10, 22, 13, 0, 0) do
         visit root_path
 
-        expect(page).to have_content(3600)
+        expect(page).to have_content(72000)
       end
     end
   end
