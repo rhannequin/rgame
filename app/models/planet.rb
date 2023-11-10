@@ -6,6 +6,7 @@ class Planet < ApplicationRecord
   belongs_to :user
 
   validates :metal_mine_level, presence: true, numericality: {only_integer: true}
+  validates :metal_basic_income, presence: true, numericality: {only_integer: true}
 
   def update_resources!
     time_since_last_resources_update = (Time.current - resources_updated_at).floor

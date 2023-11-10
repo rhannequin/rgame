@@ -16,6 +16,8 @@ describe Planet do
   describe "validations" do
     it { is_expected.to validate_presence_of(:metal_mine_level) }
     it { is_expected.to validate_numericality_of(:metal_mine_level).only_integer }
+    it { is_expected.to validate_presence_of(:metal_basic_income) }
+    it { is_expected.to validate_numericality_of(:metal_basic_income).only_integer }
   end
 
   describe "#update_resources!" do
