@@ -12,6 +12,10 @@ Planet:
   user:
     ColumnPresenceChecker:
       enabled: false
+MetalMineUpgrade:
+  planet:
+    ColumnPresenceChecker:
+      enabled: false
 
 # Ignore false positive from Clearance
 User:

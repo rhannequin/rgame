@@ -11,6 +11,7 @@ describe Planet do
 
   describe "associations" do
     it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:pending_metal_mine_upgrades) }
   end
 
   describe "validations" do

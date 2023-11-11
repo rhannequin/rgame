@@ -3,6 +3,12 @@
 class Planet < ApplicationRecord
   belongs_to :user
 
+  has_many :pending_metal_mine_upgrades,
+    -> { where(finished: false) },
+    class_name: "MetalMineUpgrade",
+    dependent: :destroy,
+    inverse_of: :planet
+
   validates :metal_mine_level, presence: true, numericality: {only_integer: true}
   validates :metal_basic_income, presence: true, numericality: {only_integer: true}
 
