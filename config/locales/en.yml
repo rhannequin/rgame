@@ -1,7 +1,13 @@
 en:
+  activerecord:
+    attributes:
+      planet:
+        metal: Metal
   application:
     header:
       sign_in: Sign in
       sign_out: Sign out
   planets:
     homeworld: Homeworld
+    level: lvl %{level}
+    metal_production_hourly_rate: "%{rate}/hr"

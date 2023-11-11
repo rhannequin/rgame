@@ -34,4 +34,12 @@ describe Planet do
       expect(planet.reload.metal).to eq(72000)
     end
   end
+
+  describe "#metal_production_hourly_rate" do
+    it "returns the hourly metal production rate" do
+      planet = create(:planet, metal_basic_income: 10, metal_mine_level: 2)
+
+      expect(planet.metal_production_hourly_rate).to eq(72000)
+    end
+  end
 end
