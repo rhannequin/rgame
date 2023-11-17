@@ -42,4 +42,12 @@ describe Planet do
       expect(planet.metal_production_hourly_rate).to eq(72000)
     end
   end
+
+  describe "#next_metal_mine_level" do
+    it "returns the next metal mine level" do
+      planet = create(:planet, metal_mine_level: 2)
+
+      expect(planet.next_metal_mine_level).to eq(3)
+    end
+  end
 end

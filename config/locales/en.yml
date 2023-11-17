@@ -23,3 +23,6 @@ en:
         success: Metal mine upgrade started
     metal_production_hourly_rate: "%{rate}/hr"
     upgrade: Upgrade
+  utils:
+    resources:
+      metal: "%{metal} Metal"

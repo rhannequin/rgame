@@ -1,20 +1,39 @@
 <div class="inline-block mt-4">
   <%= image_tag "pluto.png", class: "inline-block w-40" %>
   <h3 class="text-2xl"><%= t("planets.homeworld") %></h3>
+
   <h4 class="text-xl">
     <%= Planet.human_attribute_name(:metal) %> -
     <%= t("planets.level", level: @planet.metal_mine_level) %>
     <span class="text-sm">
       (<%= t("planets.metal_production_hourly_rate", rate: @planet.metal_production_hourly_rate) %>)
     </span>
-    <span class="text-sm">
-      <%= link_to(
-            t("planets.upgrade"),
-            planet_metal_mine_upgrades_path(@planet),
-            data: {turbo_method: "post"},
-            class: "text-blue-800 underline hover:no-underline"
-          ) %>
-    </span>
   </h4>
-  <p><%= @planet.metal %></p>
+
+  <p><%= number_with_delimiter @planet.metal %></p>
+
+  <p>
+    <% if Planets::MetalMineUpgradeForm.new(planet: @planet).valid? %>
+      <span class="text-sm">
+        <%= link_to(
+              t("planets.upgrade"),
+              planet_metal_mine_upgrades_path(@planet),
+              data: {turbo_method: "post"},
+              class: "text-blue-800 underline hover:no-underline"
+            ) %>
+        &rarr;
+        <%= t(
+              "utils.resources.metal",
+              metal: number_with_delimiter(
+                MetalMineUpgrade.cost_for_level(@planet.next_metal_mine_level)
+              )
+            ) %> -
+        <%= ActiveSupport::Duration.build(
+              MetalMineUpgrade.duration_for_level(@planet.next_metal_mine_level)
+            ).inspect %>
+      </span>
+    <% else %>
+      <s><%= t("planets.upgrade") %></s>
+    <% end %>
+  </p>
 </div>

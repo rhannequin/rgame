@@ -25,6 +25,10 @@ class Planet < ApplicationRecord
     metal_production_per_second * 1.hour.to_i
   end
 
+  def next_metal_mine_level
+    metal_mine_level + 1
+  end
+
   private
 
   def time_since_last_resources_update

@@ -44,7 +44,7 @@ module Planets
     end
 
     def target_metal_mine_level
-      current_metal_mine_level + 1
+      planet.next_metal_mine_level
     end
 
     def ends_at
