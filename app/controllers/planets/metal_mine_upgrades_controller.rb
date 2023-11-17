@@ -14,7 +14,7 @@ module Planets
         flash[:alert] = form.errors.full_messages.join(", ")
       end
 
-      redirect_to root_path
+      redirect_to @planet
     end
 
     private

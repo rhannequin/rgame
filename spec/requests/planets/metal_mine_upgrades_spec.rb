@@ -11,7 +11,7 @@ describe "POST /planets/:planet_id/metal_mine_upgrades" do
 
       post planet_metal_mine_upgrades_path(planet, as: user)
 
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to planet
       expect(flash[:notice]).to(
         eq I18n.t("planets.metal_mine_upgrades.create.success")
       )
@@ -28,7 +28,7 @@ describe "POST /planets/:planet_id/metal_mine_upgrades" do
 
         post planet_metal_mine_upgrades_path(planet, as: user)
 
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to planet
         expect(flash[:alert]).to eq "Something went wrong"
       end
     end
