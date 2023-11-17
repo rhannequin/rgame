@@ -10,6 +10,9 @@
           <span class="text-sm">
             (<%= t("planets.metal_production_hourly_rate", rate: planet.metal_production_hourly_rate) %>)
           </span>
+          <span class="text-sm">
+            <%= link_to t("planets.upgrade"), planet_metal_mine_upgrades_path(planet), data: {turbo_method: "post"}, class: "text-blue-800 underline hover:no-underline" %>
+          </span>
         </h4>
         <p><%= planet.metal %></p>
       </div>
