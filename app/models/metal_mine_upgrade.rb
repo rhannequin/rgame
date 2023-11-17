@@ -10,6 +10,8 @@ class MetalMineUpgrade < ApplicationRecord
   validates :target_level, presence: true, numericality: {only_integer: true}
   validates :ends_at, presence: true
 
+  scope :in_progress, -> { where(finished: false) }
+
   def self.cost_for_level(level)
     (BASE_COST * CUMULATIVE_FACTOR**(level - 1)).floor
   end

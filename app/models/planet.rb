@@ -3,8 +3,9 @@
 class Planet < ApplicationRecord
   belongs_to :user
 
+  has_many :metal_mine_upgrades, dependent: :destroy, inverse_of: :planet
   has_many :pending_metal_mine_upgrades,
-    -> { where(finished: false) },
+    -> { in_progress },
     class_name: "MetalMineUpgrade",
     dependent: :destroy,
     inverse_of: :planet
