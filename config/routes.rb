@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  resources :planets, only: [] do
+  resources :planets, only: [:show] do
     resources :metal_mine_upgrades, only: [:create], module: :planets
   end
 end
