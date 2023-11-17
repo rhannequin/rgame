@@ -19,4 +19,8 @@ class MetalMineUpgrade < ApplicationRecord
   def self.duration_for_level(level)
     (cost_for_level(level) / TIME_FACTOR).round.seconds
   end
+
+  def time_remaining
+    (ends_at - Time.current).floor
+  end
 end

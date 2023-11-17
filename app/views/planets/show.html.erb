@@ -12,28 +12,5 @@
 
   <p><%= number_with_delimiter @planet.metal %></p>
 
-  <p>
-    <% if Planets::MetalMineUpgradeForm.new(planet: @planet).valid? %>
-      <span class="text-sm">
-        <%= link_to(
-              t("planets.upgrade"),
-              planet_metal_mine_upgrades_path(@planet),
-              data: {turbo_method: "post"},
-              class: "text-blue-800 underline hover:no-underline"
-            ) %>
-        &rarr;
-        <%= t(
-              "utils.resources.metal",
-              metal: number_with_delimiter(
-                MetalMineUpgrade.cost_for_level(@planet.next_metal_mine_level)
-              )
-            ) %> -
-        <%= ActiveSupport::Duration.build(
-              MetalMineUpgrade.duration_for_level(@planet.next_metal_mine_level)
-            ).inspect %>
-      </span>
-    <% else %>
-      <s><%= t("planets.upgrade") %></s>
-    <% end %>
-  </p>
+  <%= render "upgrade" %>
 </div>

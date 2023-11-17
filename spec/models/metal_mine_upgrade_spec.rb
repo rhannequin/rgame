@@ -48,4 +48,14 @@ describe MetalMineUpgrade do
       end
     end
   end
+
+  describe "#time_remaining" do
+    it "returns the time remaining until the upgrade is finished" do
+      travel_to Time.zone.local(2023, 10, 22, 12, 0, 0) do
+        upgrade = create(:metal_mine_upgrade, ends_at: 1.hour.from_now)
+
+        expect(upgrade.time_remaining).to eq(1.hour)
+      end
+    end
+  end
 end
