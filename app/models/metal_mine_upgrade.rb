@@ -20,6 +20,10 @@ class MetalMineUpgrade < ApplicationRecord
     (cost_for_level(level) / TIME_FACTOR).round.seconds
   end
 
+  def complete!
+    update!(finished: true)
+  end
+
   def time_remaining
     (ends_at - Time.current).floor
   end

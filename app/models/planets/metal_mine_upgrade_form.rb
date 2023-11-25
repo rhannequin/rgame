@@ -15,6 +15,10 @@ module Planets
       ApplicationRecord.transaction do
         planet.update!(metal: planet.metal - cost)
         metal_mine_upgrade.save!
+        CompleteMetalMineUpgradeJob.perform_at(
+          metal_mine_upgrade.ends_at,
+          metal_mine_upgrade.id
+        )
       end
     end
 

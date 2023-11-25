@@ -49,6 +49,16 @@ describe MetalMineUpgrade do
     end
   end
 
+  describe "#complete!" do
+    it "updates a record from unfinished to finished" do
+      record = create(:metal_mine_upgrade, :in_progress)
+
+      expect { record.complete! }.to(
+        change(record, :finished).from(false).to(true)
+      )
+    end
+  end
+
   describe "#time_remaining" do
     it "returns the time remaining until the upgrade is finished" do
       travel_to Time.zone.local(2023, 10, 22, 12, 0, 0) do

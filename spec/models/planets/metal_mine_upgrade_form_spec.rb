@@ -55,6 +55,24 @@ describe Planets::MetalMineUpgradeForm do
       expect { form.save }.to change { planet.reload.metal }.by(-50)
     end
 
+    it "schedules a job for completion" do
+      freeze_time do
+        stub_metal_mine_upgrade(duration: 2.minutes)
+        allow(CompleteMetalMineUpgradeJob).to receive(:perform_at)
+        planet = create(:planet, metal: 100)
+        form = described_class.new(planet: planet)
+
+        form.save
+
+        expect(CompleteMetalMineUpgradeJob).to(
+          have_received(:perform_at).with(
+            2.minutes.from_now,
+            planet.pending_metal_mine_upgrades.first.id
+          )
+        )
+      end
+    end
+
     context "when the form is invalid" do
       it "returns false" do
         stub_metal_mine_upgrade(cost: 150)
@@ -80,7 +98,10 @@ describe Planets::MetalMineUpgradeForm do
     end
   end
 
-  def stub_metal_mine_upgrade(cost: 50)
-    allow(MetalMineUpgrade).to receive(:cost_for_level).and_return(cost)
+  def stub_metal_mine_upgrade(cost: 50, duration: 2.minutes)
+    allow(MetalMineUpgrade).to receive_messages(
+      cost_for_level: cost,
+      duration_for_level: duration
+    )
   end
 end
