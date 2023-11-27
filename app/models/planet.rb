@@ -3,8 +3,9 @@
 class Planet < ApplicationRecord
   belongs_to :user
 
+  has_many :metal_mine_upgrades, dependent: :destroy, inverse_of: :planet
   has_many :pending_metal_mine_upgrades,
-    -> { where(finished: false) },
+    -> { in_progress },
     class_name: "MetalMineUpgrade",
     dependent: :destroy,
     inverse_of: :planet
@@ -22,6 +23,10 @@ class Planet < ApplicationRecord
 
   def metal_production_hourly_rate
     metal_production_per_second * 1.hour.to_i
+  end
+
+  def next_metal_mine_level
+    metal_mine_level + 1
   end
 
   private

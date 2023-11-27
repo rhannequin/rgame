@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", :as => "sign_up"
 
   root "pages#index"
+
+  resources :planets, only: [:show] do
+    resources :metal_mine_upgrades, only: [:create], module: :planets
+  end
 end

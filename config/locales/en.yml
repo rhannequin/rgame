@@ -1,4 +1,12 @@
 en:
+  activemodel:
+    errors:
+      models:
+        planets/metal_mine_upgrade_form:
+          attributes:
+            base:
+              insufficient_resources: Insufficient resources
+              pending_upgrade: An upgrade is already in progress
   activerecord:
     attributes:
       planet:
@@ -10,4 +18,12 @@ en:
   planets:
     homeworld: Homeworld
     level: lvl %{level}
+    metal_mine_upgrades:
+      create:
+        success: Metal mine upgrade started
     metal_production_hourly_rate: "%{rate}/hr"
+    pending_upgrade: "Upgrade to level %{target_level} finished in %{time_remaining}"
+    upgrade: Upgrade
+  utils:
+    resources:
+      metal: "%{metal} Metal"
