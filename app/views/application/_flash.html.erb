@@ -1,6 +1,6 @@
 <div id="flash" class="text-center">
   <% flash.each do |key, value| %>
-    <div class="flash border border-<%= color_for_alert_type(key) %>-400 text-<%= color_for_alert_type(key) %>-700 my-3 px-4 py-3 rounded inline-block">
+    <div class="flash border <%= color_for_alert_type(key) %> my-3 px-4 py-3 rounded inline-block">
       <%= value %>
     </div>
   <% end %>
