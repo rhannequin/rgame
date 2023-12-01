@@ -23,7 +23,7 @@ describe "Planets" do
         visit root_path
         click_link I18n.t("planets.homeworld")
 
-        expect(page).to have_content(72000)
+        expect(page).to have_content("72,000")
       end
     end
   end

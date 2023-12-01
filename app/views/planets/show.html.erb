@@ -6,7 +6,7 @@
     <%= Planet.human_attribute_name(:metal) %> -
     <%= t("planets.level", level: @planet.metal_mine_level) %>
     <span class="text-sm">
-      (<%= t("planets.metal_production_hourly_rate", rate: @planet.metal_production_hourly_rate) %>)
+      (<%= t("planets.metal_production_hourly_rate", rate: number_with_delimiter(@planet.metal_production_hourly_rate)) %>)
     </span>
   </h4>
 
