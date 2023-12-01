@@ -14,14 +14,21 @@
               MetalMineUpgrade.cost_for_level(@planet.next_metal_mine_level)
             )
           ) %> -
-      <%= duration_in_words MetalMineUpgrade.duration_for_level(@planet.next_metal_mine_level) %>
+      <%= duration_to_human_time MetalMineUpgrade.duration_for_level(@planet.next_metal_mine_level) %>
     <% elsif pending_upgrade = @planet.pending_metal_mine_upgrades.last %>
       <s><%= t("planets.upgrade") %></s> -
       <%= t(
             "planets.pending_upgrade",
-            target_level: pending_upgrade.target_level,
-            time_remaining: duration_in_words(pending_upgrade.time_remaining)
+            target_level: pending_upgrade.target_level
           ) %>
+      -
+      <span
+        data-controller="countdown"
+        data-countdown-remaining-time-seconds-value="<%= pending_upgrade.remaining_time %>">
+          <span data-countdown-target="timer">
+            <%= duration_to_human_time pending_upgrade.remaining_time %>
+          </span>
+      </span>
     <% end %>
   </span>
 </p>

@@ -24,7 +24,7 @@ class MetalMineUpgrade < ApplicationRecord
     update!(finished: true)
   end
 
-  def time_remaining
+  def remaining_time
     (ends_at - Time.current).floor
   end
 end

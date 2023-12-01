@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TimeHelper
-  def duration_in_words(duration)
-    ActiveSupport::Duration.build(duration).inspect
+  def duration_to_human_time(duration)
+    Time.at(duration).utc.strftime("%H:%M:%S")
   end
 end

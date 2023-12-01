@@ -22,7 +22,7 @@ en:
       create:
         success: Metal mine upgrade started
     metal_production_hourly_rate: "%{rate}/hr"
-    pending_upgrade: "Upgrade to level %{target_level} finished in %{time_remaining}"
+    pending_upgrade: "Pending upgrade to level %{target_level}"
     upgrade: Upgrade
   utils:
     resources:

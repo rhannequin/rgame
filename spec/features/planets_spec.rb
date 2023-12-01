@@ -40,12 +40,12 @@ describe "Planets" do
 
         expect(page).to have_content("Upgrade")
         expect(page).to have_content("270 Metal")
-        expect(page).to have_content("39 seconds")
+        expect(page).to have_content("00:00:39")
 
         click_link "Upgrade"
 
         expect(page).to have_content("9,730")
-        expect(page).to have_content("Upgrade to level 2 finished in 39 seconds")
+        expect(page).to have_content("Pending upgrade to level 2 - 00:00:39")
       end
     end
   end
