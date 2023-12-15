@@ -10,7 +10,14 @@
     </span>
   </h4>
 
-  <p><%= number_with_delimiter @planet.metal %></p>
+  <p
+    data-controller="resource-quantity"
+    data-resource-quantity-quantity-value="<%= @planet.metal %>"
+    data-resource-quantity-rate-value="<%= @planet.metal_production_per_second %>">
+    <span data-resource-quantity-target="quantity">
+      <%= number_with_delimiter @planet.metal %>
+    </span>
+  </p>
 
   <%= render "upgrade" %>
 </div>

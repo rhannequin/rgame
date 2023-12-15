@@ -21,6 +21,10 @@ class Planet < ApplicationRecord
     end
   end
 
+  def metal_production_per_second
+    metal_basic_income * metal_mine_level
+  end
+
   def metal_production_hourly_rate
     metal_production_per_second * 1.hour.to_i
   end
@@ -33,9 +37,5 @@ class Planet < ApplicationRecord
 
   def time_since_last_resources_update
     (Time.current - resources_updated_at).floor
-  end
-
-  def metal_production_per_second
-    metal_basic_income * metal_mine_level
   end
 end
