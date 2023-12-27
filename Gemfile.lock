@@ -89,7 +89,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.4)
+    bigdecimal (3.1.5)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -115,14 +115,14 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
-    database_consistency (1.7.20)
+    database_consistency (1.7.23)
       activerecord (>= 3.2)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
-    drb (2.1.1)
+    drb (2.2.0)
       ruby2_keywords
     email_validator (2.2.4)
       activemodel
@@ -177,7 +177,7 @@ GEM
     mini_portile2 (2.8.4)
     minitest (5.20.0)
     msgpack (1.7.2)
-    mutex_m (0.1.2)
+    mutex_m (0.2.0)
     net-imap (0.4.0)
       date
       net-protocol
@@ -352,7 +352,7 @@ GEM
       railties (>= 6.0.0)
     thor (1.2.2)
     tilt (2.3.0)
-    timeout (0.4.0)
+    timeout (0.4.1)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
